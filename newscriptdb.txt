@@ -1,0 +1,29 @@
+CREATE DATABASE `ujian-xyz`;
+//untuk membuat database
+------------
+SELECT emplo.*, job.*
+FROM emplo
+JOIN job ON job.id_job = emplo.id_job;
+-------------
+SELECT emplo.*, job.*
+FROM emplo
+LEFT JOIN job ON job.id_job = emplo.id_job;
+--------------
+SELECT emplo.*, job.*
+FROM emplo
+RIGHT JOIN job ON job.id_job = emplo.id_job;
+--------------
+SELECT emplo.*, job.*
+FROM emplo
+LEFT JOIN job ON job.id_job = emplo.id_job
+WHERE emplo.id_job IS NULL;
+--------------
+SELECT emplo.full_name, emplo.gender, job.name_jobs
+FROM emplo
+LEFT JOIN job ON job.id_job = emplo.id_job;
+---------------
+SELECT emplo.full_name, emplo.gender, job.name_jobs
+FROM emplo
+LEFT JOIN job ON job.id_job = emplo.id_job
+WHERE job.name_jobs = 'FrontEnd Developer'
+OR job.name_jobs = 'BackEnd Developer';
